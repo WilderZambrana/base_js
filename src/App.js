@@ -2,7 +2,7 @@ const nombre = document.querySelector("#nombre-input");
 const edad = document.querySelector("#edad-input");
 const genero = document.querySelector("#genero-input");
 const form = document.querySelector("#saludador-form");
- 
+
 /*form.addEventListener("submit", (event) => {
   if(edad.value > 30 ) {
     if(genero.value === "Male"){
@@ -21,6 +21,15 @@ const form = document.querySelector("#saludador-form");
   }  
 });*/
 var title="";
+var time='';
+if(hours>6 && hours<12){
+  time="buenos dias ";
+} else if(hours>=12 && hours<18){
+  time="buenas tardes ";
+} else {
+  time="buenas noches ";
+}
+
 form.addEventListener("submit", (event) => {
   if(edad.value > 30 ) {
     if(genero.value === "Male"){
@@ -37,5 +46,5 @@ form.addEventListener("submit", (event) => {
   } else {
     title="";
   }  
-  alert("Hola " + title + nombre.value);
+  alert("Hola " + time + title + nombre.value);
 });

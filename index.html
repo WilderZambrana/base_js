@@ -1,19 +1,46 @@
 <html>
-  <body>
-    <h1>Bienvenido a Ingeniería de Software</h1>
-    <form id="saludador-form">
-      <label for="nombre-input">Tu nombre:</label><br>
-      <input type="text" id="nombre-input" /><br>
-      <label for="edad-input">Tu edad:</label><br>
-      <input type="number" id="edad-input" /><br>
-      <label for="genero-input">Seleccione su genero:</label><br>
-      <select id="genero-input" name="genero-input">
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-      </select>
-      <br><br>
-      <input type="submit" value="Saludar" />
-    </form>
-    <script src="/src/index.js"></script>
-  </body>
+
+<head>
+  <title>Título</title>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <h1>Bienvenido a Ingeniería de Software</h1>
+  <h1 id="HoraActual"></h1>
+  <script type="text/javascript">
+    showTime();
+    function showTime() {
+      myDate = new Date();
+      hours = myDate.getHours();
+      minutes = myDate.getMinutes();
+      seconds = myDate.getSeconds();
+      if (hours < 10) hours = 0 + hours;
+
+      if (minutes < 10) minutes = "0" + minutes;
+
+      if (seconds < 10) seconds = "0" + seconds;
+
+      $("#HoraActual").text(hours + ":" + minutes + ":" + seconds);
+      setTimeout("showTime()", 1000);
+    }
+  </script>
+  <form id="saludador-form">
+    <label for="nombre-input">Tu nombre:</label><br>
+    <input type="text" id="nombre-input" /><br>
+    <label for="edad-input">Tu edad:</label><br>
+    <input type="number" id="edad-input" /><br>
+    <label for="genero-input">Seleccione su genero:</label><br>
+    <select id="genero-input" name="genero-input">
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
+    <br><br>
+    <input type="submit" value="Saludar" />
+  </form>
+  <script src="/src/index.js"></script>
+
+</body>
+
 </html>
