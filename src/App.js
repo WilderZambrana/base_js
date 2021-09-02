@@ -31,6 +31,7 @@ if(hours>6 && hours<12){
 }
 
 form.addEventListener("submit", (event) => {
+  event.preventDefault();
   if(edad.value > 30 ) {
     if(genero.value === "Male"){
       title="señor ";
