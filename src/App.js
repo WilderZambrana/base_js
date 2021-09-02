@@ -20,32 +20,32 @@ const form = document.querySelector("#saludador-form");
     alert("Hola " + nombre.value);
   }  
 });*/
-var title="";
-var time='';
-if(hours>6 && hours<12){
-  time="buenos dias ";
-} else if(hours>=12 && hours<18){
-  time="buenas tardes ";
+var title = "";
+var time = '';
+if (hours > 6 && hours < 12) {
+  time = "buenos dias ";
+} else if (hours >= 12 && hours < 18) {
+  time = "buenas tardes ";
 } else {
-  time="buenas noches ";
+  time = "buenas noches ";
 }
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  if(edad.value > 30 ) {
-    if(genero.value === "Male"){
-      title="señor ";
-    } else{
-      title="señora ";
-    }    
-  } else if(edad.value > 0){
-    if(genero.value === "Male"){
-      title="joven ";
-    } else{
-      title="señorita ";
+  if (edad.value > 30) {
+    if (genero.value === "Male") {
+      title = "señor ";
+    } else {
+      title = "señora ";
+    }
+  } else if (edad.value > 0) {
+    if (genero.value === "Male") {
+      title = "joven ";
+    } else {
+      title = "señorita ";
     }
   } else {
-    title="";
-  }  
+    title = "";
+  }
   alert("Hola " + time + title + nombre.value);
 });
